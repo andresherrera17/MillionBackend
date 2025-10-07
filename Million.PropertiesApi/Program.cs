@@ -28,13 +28,9 @@ var mongoConn = configuration.GetValue<string>("Mongo:ConnectionString") ?? "mon
 var mongoDbName = configuration.GetValue<string>("Mongo:Database") ?? "milliondb";
 
 builder.Services.AddSingleton<IMongoClient>(_ => new MongoClient(mongoConn));
-builder.Services.AddSingleton(sp => sp.GetRequiredService<IMongoClient>().GetDatabase(mongoDbName));
+builder.Services.AddScoped<IMongoDatabase>(sp => sp.GetRequiredService<IMongoClient>().GetDatabase(mongoDbName));
+builder.Services.AddScoped<IMongoContext, MongoContext>();
 
-builder.Services.AddScoped(sp =>
-{
-    var client = sp.GetRequiredService<IMongoClient>();
-    return new MongoContext(client, mongoDbName);
-});
 
 builder.Services.AddSingleton(sp =>
 {
@@ -58,7 +54,6 @@ builder.Services.AddScoped<IOwnerRepository, OwnerRepository>();
 builder.Services.AddScoped<IPropertyService, PropertyService>();
 builder.Services.AddScoped<IBlobStorageService, BlobStorageService>();
 
-builder.Services.AddScoped<IMongoContext, MongoContext>();
 
 var corsPolicy = "AllowSpecificOrigin";
 
