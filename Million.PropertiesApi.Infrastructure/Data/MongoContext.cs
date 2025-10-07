@@ -1,9 +1,10 @@
 ﻿using MongoDB.Driver;
 using Million.PropertiesApi.Core.Models;
+using Million.PropertiesApi.Infrastructure.Interfaces.Data;
 
 namespace Million.PropertiesApi.Infrastructure.Data
 {
-    public class MongoContext
+    public class MongoContext : IMongoContext
     {
         private readonly IMongoDatabase _database;
 

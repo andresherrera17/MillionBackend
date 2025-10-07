@@ -6,6 +6,7 @@ using Million.PropertiesApi.Business.Interfaces;
 using Million.PropertiesApi.Business.Services;
 using Million.PropertiesApi.Infraestructure.Interfaces;
 using Million.PropertiesApi.Infrastructure.Data;
+using Million.PropertiesApi.Infrastructure.Interfaces.Data;
 using Million.PropertiesApi.Infrastructure.Repositories;
 using Million.PropertiesApi.Middleware;
 using Million.PropertiesApi.Services;
@@ -56,6 +57,8 @@ builder.Services.AddScoped<IOwnerRepository, OwnerRepository>();
 
 builder.Services.AddScoped<IPropertyService, PropertyService>();
 builder.Services.AddScoped<IBlobStorageService, BlobStorageService>();
+
+builder.Services.AddScoped<IMongoContext, MongoContext>();
 
 var corsPolicy = "AllowSpecificOrigin";
 

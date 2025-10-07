@@ -4,6 +4,7 @@ using Million.PropertiesApi.Core.Dtos;
 using Million.PropertiesApi.Core.Models;
 using Million.PropertiesApi.Infraestructure.Interfaces;
 using Million.PropertiesApi.Infrastructure.Data;
+using Million.PropertiesApi.Infrastructure.Interfaces.Data;
 
 namespace Million.PropertiesApi.Services
 {
@@ -15,7 +16,7 @@ namespace Million.PropertiesApi.Services
         private readonly IPropertyTraceRepository _traceRepo;
         private readonly IMapper _mapper;
         private readonly IBlobStorageService _blobStorage;
-        private readonly MongoContext _context;
+        private readonly IMongoContext _context;
 
         public PropertyService(
             IPropertyRepository propertyRepo,
@@ -23,7 +24,7 @@ namespace Million.PropertiesApi.Services
             IPropertyImageRepository imageRepo,
             IPropertyTraceRepository traceRepo,
             IBlobStorageService blobStorage,
-            MongoContext context,
+            IMongoContext context,
             IMapper mapper)
         {
             _propertyRepo = propertyRepo;
