@@ -1,0 +1,33 @@
+# Archivos de compilación
+bin/
+obj/
+out/
+logs/
+
+# Configuración local
+.vs/
+.vscode/
+*.user
+*.suo
+
+# Archivos de publicación
+publish/
+dist/
+
+# Dependencias
+packages/
+node_modules/
+
+# Archivos de entorno y configuración sensible
+.env
+appsettings.Development.json
+appsettings.*.local.json
+
+# Archivos temporales y de caché
+*.tmp
+*.log
+*.cache
+
+# Archivos del sistema
+.DS_Store
+Thumbs.db

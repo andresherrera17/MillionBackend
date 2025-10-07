@@ -1,0 +1,23 @@
+[
+  {
+    "IdOwner": "owner1",
+    "Name": "Casa en Bogotá",
+    "AddressProperty": "Calle 123 #45-67, Bogotá",
+    "PriceProperty": 250000000,
+    "Images": [ "https://picsum.photos/seed/1/800/600" ]
+  },
+  {
+    "IdOwner": "owner2",
+    "Name": "Apartamento en Medellín",
+    "AddressProperty": "Carrera 45 #12-34, Medellín",
+    "PriceProperty": 180000000,
+    "Images": [ "https://picsum.photos/seed/2/800/600" ]
+  },
+  {
+    "IdOwner": "owner3",
+    "Name": "Finca en Santander",
+    "AddressProperty": "Vereda El Paraíso, Santander",
+    "PriceProperty": 450000000,
+    "Images": [ "https://picsum.photos/seed/3/800/600" ]
+  }
+]
